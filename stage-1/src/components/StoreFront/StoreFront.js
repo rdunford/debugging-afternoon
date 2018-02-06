@@ -9,13 +9,14 @@ class StoreFront extends Component {
         this.state = {
             products: []
         }
+
     }
 
     componentDidMount() {
         axios.get("https://practiceapi.devmountain.com/products/")
             .then((response) => {
                 this.setState({
-                    products: response
+                    products: response.data
                 })
             })
     }
